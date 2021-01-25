@@ -239,7 +239,7 @@ class Imagine(nn.Module):
 
                 if self.save_progress:
                     total_iterations = epoch * self.iterations + i
-                    num = total_iterations // self.save_every
+                    num = str(total_iterations // self.save_every).zfill(4)
                     save_image(image, Path(f'./{self.textpath}.{num}.png'))
 
         return total_loss
